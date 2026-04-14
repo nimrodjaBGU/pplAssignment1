@@ -59,8 +59,15 @@ Guidelines:
 - Avoid using `any`.
 
 1. [3 points] `(x, y) => x.some(y)`
+            <T>(x:T[], y:(x:T) => boolean) => boolean
 2. [3 points] `x => x.map(y => y * 2)`
+            (x:number[]) => number[]
 3. [3 points] `(x, y) => x.filter(y)`
+            <T>(x: T[], y: (x:T) => boolean) => T[]
 4. [3 points] `x => x.reduce((acc, cur) => acc + cur, 0)`
+            (x:number[]) => number
 5. [3 points] `(x, y) => x ? y[0] : y[1]`
+            <T>(x:boolean, y:T[]) => T
+            
 6. [3 points] `(f,g) => x => f(g(x+1))`
+            <U,V>(f: (x:U) => V, g:(x:number) => U) => (x:number) => V
