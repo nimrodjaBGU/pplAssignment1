@@ -5,18 +5,18 @@ Submit the solution to this part as `part1.md`.
 ### [25 points] Question 1.1
 
 1. Explain in simple words the following programming paradigms:
-   1. [5 points] Imperative - explicit sequence of commands
-
-   1. [5 points] Object Oriented - computation is effected by sending messages to objects. objects encapsulated state and exhibit bevhior.
-
-   1. [5 points] Functional - computation proceeds by nested function calls that avoid any global state mutation and through definition of function composition.
+   1. [5 points] Imperative
+      impeative programing is a sequance of commands that the computer follows step by step, kind of like a recepie.
+   1. [5 points] Object Oriented
+      object oriented programing is organized using object, each object holds data and behivioirs. Objeect interact with each other and pass data between one another.
+   1. [5 points] Functional
+      Functional Programing is kind of like evaluating a math expression. Is by evaluating nested functions/expressions and avoids mutating values and side effects
 
 1. [5 points] How does the object oriented paradigm improve over the imperative paradigm?
-Object Oriented paragidm is more flexible and easier to manage or adjust than the Imperative paradigm.
-
-
+    OOP improved over imperative by being more organized and writing programs around objects that each have data and behaviord. This groups related things togerher, and helps make sure that not every part of the program only knows what it needs to know. Overall it omproved encapsulation and abstraction, and makes a program easier to understand and maintain, especially when it gets bigger and impartive programing becomes harder to manage. 
+    
 1. [5 points] How does the functional paradigm improve over the object oriented paradigm?
-
+    Functional programming improves OOP by avoiding mutation and shared states. It builds programs around pure functions and expressions, and not around objects whose data changes. This makes the code easier to understand, test, reuse, and parallelize.
 ### [10 points] Question 1.2
 
 Consider the following TypeScript function, which calculates the average price of all discounted products in a given inventory.

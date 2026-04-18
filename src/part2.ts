@@ -14,11 +14,11 @@ export const countVowels = (s: string): number =>
 
 /* Question 2.2 */
 export const isPalindrome = (text: string): boolean => {
-    const cleaned = pipe(stringToArray,(char: string[]) => char.filter(c => /[a-zA-Z0-9]/.test(c)),(letters: string[]) => letters.map(l => l.toLowerCase))(text);
+    const cleaned = pipe(stringToArray,(char: string[]) => char.filter(c => /[a-zA-Z0-9]/.test(c)),(letters: string[]) => letters.map(l => l.toLowerCase()))(text);
 
     const reversed = cleaned.reduce((acc, cur) => cur + acc, "")
 
-    return cleaned.join("") ===reversed;
+    return cleaned.join("") === reversed;
 }
     
 
@@ -32,6 +32,6 @@ export type WordTree = {
 
 export const treeToSentence = (t: WordTree): string => {
     if(t.children.length===0) return t.root;
-    const childrenSentence = t.children.map(child => treeToSentence(child)).reduce((acc , cur) => acc + " " + cur , "");
+    const childrenSentence = t.children.map(child => treeToSentence(child)).join(" ");
     return t.root + " " + childrenSentence;
 }

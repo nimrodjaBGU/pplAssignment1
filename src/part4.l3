@@ -1,15 +1,63 @@
+; Signature: last-item (lst)
+; Type: [List(T) => T]
+; Purpose: returns the last item on the list
+; Pre-conditions: non-empty list
+; Tests: (last-item'(1 2 3)) => 3
+
 (define last-item
   (λ (lst)
-    'todo))
+      (if(empty? (cdr lst)) (car lst)
+      (last-item (cdr lst)))))
+
+      
+
+
+; Signature: remove-last-item (lst)
+; Type: [List(T) => List(T)]
+; Purpose: return a new list without the last item
+; Pre-conditions: non-empty list
+; Tests: (remove-last-item'(1 2 3)) => '(1 2)
 
 (define remove-last-item
   (λ (lst)
-    'todo))
+    (if (empty? (cdr lst)) '()
+    (cons (car lst) (remove-last-item (cdr lst))))))
+
+
+
+
+
+; Signature: rotate-nth(lst, n)
+; Type: [List(T) * Number => List(T)]
+; Purpose: rotates the list to the right n times
+; Pre-conditions: non empty list and non negative n 
+; Tests: rotate-nth'(1 2 3) => (3 1 2)
 
 (define rotate-nth
   (λ (lst n)
-   'todo))
+    (if (= n 0)  
+      lst 
+      (rotate-nth
+        (remove-last-item
+          (cons (last-item (lst) lst))
+      (- n 1))))))
+
+
+
+
+; Signature: deep-reverse(l)
+; Type: [List -> List]
+; Purpose: returns a list with reversal on each nested level
+; Pre-conditions: true
+; Tests: (deep-reverse '(1 (2 3) (4 5))) => ((5 4) (3 2 ) 1)
 
 (define deep-reverse
   (λ (l)
-    'todo))
+    (if (empty? l)
+      '()
+      (append
+        (deep-reverse (cdr l))
+        (list
+          (if (list? (car l))
+            (deep-reverse (car l))
+            (car l)))))))
